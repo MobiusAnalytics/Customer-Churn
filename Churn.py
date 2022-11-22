@@ -12,7 +12,7 @@ from PIL import Image
 # loading the trained model
 pickle_file = open('RF_churn_model.sav', 'rb') 
 Model = pickle.load(pickle_file)
-titlepage = Image.open('titlepage.png')
+titlepage = Image.open('titlepage.PNG')
 
 @st.cache()
 
