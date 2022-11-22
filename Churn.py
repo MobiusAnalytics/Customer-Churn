@@ -6,10 +6,13 @@ import streamlit as st
 import os
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
+from PIL import Image
+
 
 # loading the trained model
 pickle_file = open('RF_churn_model.sav', 'rb') 
 Model = pickle.load(pickle_file)
+titlepage = Image.open('titlepage.png')
 
 @st.cache()
 
@@ -51,7 +54,7 @@ def main():
     """    
     #st.markdown(html_temp, unsafe_allow_html = True) 
     #st.title("Churn Prediction")
-    st.image("""titlepage.png""")
+    st.image(titlepage)
     st.sidebar.subheader("Upload a file to Predict the output!")
     uploaded_file = st.sidebar.file_uploader("Choose a File")
     if uploaded_file is not None:
